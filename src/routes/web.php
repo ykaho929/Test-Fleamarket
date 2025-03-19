@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\ProductController;
 
 /*
 |--------------------------------------------------------------------------
@@ -19,4 +20,5 @@ Route::middleware('auth')->group(function () {
     Route::get('/', [AuthController::class, 'index']);
     Route::get('/mypage', [UserController::class, 'favorite']);
     Route::get('/mypage/profile', [UserController::class, 'register']);
+    Route::get('/sell', [ProductController::class, 'sell']);
 });
