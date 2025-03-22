@@ -7,12 +7,11 @@ use Illuminate\Http\Request;
 class UserController extends Controller
 {
     public function favorite(){
-        return view('user');
+        return view('mypage');
     }
 
     public function register(){
         return view('profile');
     }
-
     
 }
