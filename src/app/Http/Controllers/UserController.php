@@ -13,5 +13,9 @@ class UserController extends Controller
     public function register(){
         return view('profile');
     }
+
+    public function address(){
+         return view('address');
+    }
     
 }
