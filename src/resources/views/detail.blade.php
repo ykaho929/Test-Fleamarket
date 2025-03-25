@@ -3,7 +3,7 @@
 @section('css')
     <link rel="stylesheet" href="{{ asset('css/detail.css') }}">
 @endsection
-    
+
 @section('content')
     <div class="product__content">
         <div class="content__product__group">

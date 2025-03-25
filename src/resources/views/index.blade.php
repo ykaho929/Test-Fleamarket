@@ -3,6 +3,8 @@
 @section('css')
     <link rel="stylesheet" href="{{ asset('css/index.css') }}">
 @endsection
+
+@section('content')
     <div class="product-contents">
         <!-- ふぉーち文入れる -->
         <div class="product-content">
@@ -14,4 +16,4 @@
         </div>
         <!-- フォーチ終わり -->
     </div>
-@section('content')
+@endsection
