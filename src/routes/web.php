@@ -21,4 +21,7 @@ Route::middleware('auth')->group(function () {
     Route::get('/mypage', [UserController::class, 'favorite']);
     Route::get('/mypage/profile', [UserController::class, 'register']);
     Route::get('/sell', [ProductController::class, 'sell']);
+    Route::get('/purchase',[ProductController::class, 'purchase']);
+    Route::get('/purchase/address',[UserController::class,'address']);
 });
+Route::get('/detail', [ProductController::class, 'detail']);
