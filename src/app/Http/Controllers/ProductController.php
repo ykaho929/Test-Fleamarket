@@ -17,4 +17,5 @@ class ProductController extends Controller
     public function purchase(){
         return view ('purchase');
     }
+    
 }
