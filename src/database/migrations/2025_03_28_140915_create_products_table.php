@@ -19,9 +19,9 @@ class CreateproductsTable extends Migration
             $table->integer('price');
             $table->string('explanation');
             $table->string('image')->nullable();
-            $table->foreignId('category_id');
+            $table->foreignId('category_id')->constrained()->cascadeOnDelete();
             $table->tinyInteger('state');
-            $table->foreignId('brand_id');
+            $table->string('brand');
             $table->foreignId('is_sold_out');
             $table->timestamp('created_at')->useCurrent()->nullable();
             $table->timestamp('updated_at')->useCurrent()->nullable();
