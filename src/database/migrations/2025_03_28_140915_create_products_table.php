@@ -17,12 +17,12 @@ class CreateproductsTable extends Migration
             $table->id();
             $table->string('name');
             $table->integer('price');
-            $table->string('explanation');
+            $table->string('explanation',255);
             $table->string('image')->nullable();
             $table->foreignId('category_id')->constrained()->cascadeOnDelete();
             $table->tinyInteger('state');
             $table->string('brand');
-            $table->foreignId('is_sold_out');
+            $table->boolean('is_sold_out');
             $table->timestamp('created_at')->useCurrent()->nullable();
             $table->timestamp('updated_at')->useCurrent()->nullable();
         });
@@ -35,6 +35,6 @@ class CreateproductsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('_products');
+        Schema::dropIfExists('products');
     }
 }
