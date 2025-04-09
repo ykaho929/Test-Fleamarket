@@ -24,4 +24,4 @@ Route::middleware('auth')->group(function () {
     Route::get('/purchase',[ProductController::class, 'purchase']);
     Route::get('/purchase/address',[UserController::class,'address']);
 });
-Route::get('/detail', [ProductController::class, 'detail']);
+Route::get('/item/{product_id}', [ProductController::class, 'detail']);
