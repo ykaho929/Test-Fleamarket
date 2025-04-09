@@ -6,14 +6,15 @@
 
 @section('content')
     <div class="product-contents">
-        <!-- ふぉーち文入れる -->
-        <div class="product-content">
-            <a href="行先" class="product-link"></a>
-            <img src="画像" alt="商品画像" class="image-content"/>
-            <div class="detail-content">
-                
+        @foreach($products as $product)
+            <div class="product-content">
+                <a href="/item/{{$product->id}}" class="product-link">
+                <img src="{{ asset($product->image) }}" alt="商品画像" class="detail"/>
+                </a>
+                <div class="detail-content">      
+                    <p>{{$product->name}}</p>              
+                </div>
             </div>
-        </div>
-        <!-- フォーチ終わり -->
+        @endforeach
     </div>
 @endsection
