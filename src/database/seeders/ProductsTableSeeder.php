@@ -126,7 +126,7 @@ class ProductsTableSeeder extends Seeder
             'name' => 'メイクセット',
             'price' => '2500',
             'explanation' => '便利なメイクアップセット',
-            'image' => 'storage/images/Mikeset.jpg',
+            'image' => 'storage/images/Makeset.jpg',
             'category_id' => '7',
             'state' => '2',
             'brand' => 'CANMAKE',
