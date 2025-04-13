@@ -7,9 +7,5 @@ use Illuminate\Http\Request;
 
 class AuthController extends Controller
 {
-    public function index()
-    {
-        $products = Product::all();
-        return view('index', ['products' => $products]);
-    }
+    
 }
