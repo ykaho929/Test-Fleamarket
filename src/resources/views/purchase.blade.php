@@ -9,10 +9,12 @@
         <div class="left-content">
             <div class="product-items">
                 <div class="product-item">
-                    <div class="item--image">商品画像</div>
+                    <div class="item--image">
+                        <img src="{{ asset($products->image) }}" alt="商品画像" class="product__item--image"/>
+                    </div>
                 </div>
                 <div class="product-item">
-                    <div class="item--name">商品名</div>
+                     <div class="product__item--name">{{ $products->name }}</div>
                 </div>
             </div>
             <div class="payment-items">
@@ -21,7 +23,11 @@
                 </div>
                 <div class="payment-item">
                     <div class="item--data">
-                    <!-- テーブルできたら、１はコンビニ、２はクレカ     -->
+                        <select name="payment" class="form-control">
+                            <option value="">選択してください</option>
+                            <option value="1">コンビニ払い</option>
+                            <option value="2">クレジットカード</option>
+                        </select>
                     </div>
                     <input type="hidden" name="payment" valuse="">
                 </div>
