@@ -33,9 +33,20 @@
             <div class="group__item">
                 <div class="item--title">商品の情報</div>                
                     <div class="item--label">カテゴリー</div>
-                        <div class="item--tag">{{$products->category}}</div>
+                        <div class="item--tag">{{$category->name}}</div>
                     <div class="item--label">商品の状態</div>
-                    <div class="item--tag">{{$products->state}}</div>            
+                    <div class="item--data">
+                        @if($products['state'] == 1)
+                        良好
+                        @elseif($products['state'] == 2)
+                        目立った傷や汚れなし
+                        @elseif($products['state'] == 3)
+                        やや傷や汚れあり
+                        @elseif($products['state'] == 4)
+                        状態が悪い
+                        @endif
+                    </div>    
+                </div>            
             </div>
         </div>
         <div class="content__comment__group">
