@@ -30,20 +30,23 @@
                     <span class="form__label--item">カテゴリー</span>
                 </div>
                 <div class="form__group-content">
-                    <div class="form__input--text">
-                        <!-- カテゴリーテーブル作成後 -->
-                    </div>
+                    @foreach($categories as $category)
+                        <button class="form__category-option" name="category_id" type="button" value="{{ $category->id }}">
+                            {{ $category->name }}
+                        </button>                        
+                    @endforeach
                 </div>
             </div>
             <div class="form__group">
                 <div class="form__group--title">
                     <span class="form__label--item">商品の状態</span>
                 </div>
-                <div class="form__group-content">
-                    <div class="form__input--text">
-                        <!-- 商品状態のテーブル作成後 -->
-                    </div>
-                </div>
+                <select class="form__state-select" name="state" id="state">
+                    <option value="1" {{ old('state') == 1 ? 'selected' : '' }}>良好</option>
+                    <option value="2" {{ old('state') == 2 ? 'selected' : '' }}>目立った傷や汚れなし</option>
+                    <option value="3" {{ old('state') == 3 ? 'selected' : '' }}>やや傷や汚れあり</option>
+                    <option value="4" {{ old('state') == 4 ? 'selected' : '' }}>状態が悪い</option>
+                </select>
             </div>
             <div class="form__group">
                 <div class="form__group--subtitle">

@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Category;
 use App\Models\Product;
 use Illuminate\Http\Request;
 
@@ -14,13 +15,15 @@ class ProductController extends Controller
     }
 
     public function sell(){
-        return view ('sell');
+        $categories = Category::all();
+        return view ('sell', compact('categories'));
     }
 
     public function detail($id)
     {
         $products = Product::findOrFail($id);
-        return view ('detail', ['products' => $products]);
+        $category = Category::findOrFail($products->category_id);
+        return view ('detail', compact('products', 'category'));
     }
 
     public function purchase(){
