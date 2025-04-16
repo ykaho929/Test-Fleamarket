@@ -21,8 +21,8 @@
             <div class="group__item">
                 <div class="product__group--price">{{$products->price}}円</div>
             </div>
-            <div class="group__button">
-                <button class="button-order">購入手続きへ</button>
+            <div class="group__item">
+                <a href="/purchase/{{$products->id}}" class="purchase-link">購入手続へ</a>
             </div>
             <div class="group__item">
                 <div class="item--title">商品の説明</div>
@@ -35,16 +35,17 @@
                     <div class="item--label">カテゴリー</div>
                         <div class="item--tag">{{$category->name}}</div>
                     <div class="item--label">商品の状態</div>
-                    <div class="item--data">
-                        @if($products['state'] == 1)
-                        良好
-                        @elseif($products['state'] == 2)
-                        目立った傷や汚れなし
-                        @elseif($products['state'] == 3)
-                        やや傷や汚れあり
-                        @elseif($products['state'] == 4)
-                        状態が悪い
-                        @endif
+                        <div class="item--data">
+                            @if($products['state'] == 1)
+                            良好
+                            @elseif($products['state'] == 2)
+                            目立った傷や汚れなし
+                            @elseif($products['state'] == 3)
+                            やや傷や汚れあり
+                            @elseif($products['state'] == 4)
+                            状態が悪い
+                            @endif
+                        </div>
                     </div>    
                 </div>            
             </div>

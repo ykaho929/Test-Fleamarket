@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Category;
+use App\Models\Purchase;
 use App\Models\Product;
 use Illuminate\Http\Request;
 
@@ -26,8 +27,10 @@ class ProductController extends Controller
         return view ('detail', compact('products', 'category'));
     }
 
-    public function purchase(){
-        return view ('purchase');
+    public function purchase($id)
+    {
+        $products = Product::findOrFail($id);
+        return view ('purchase', compact('products'));
     }
     
 }
