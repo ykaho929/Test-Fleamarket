@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\User;
 use App\Models\Category;
 use App\Models\Purchase;
 use App\Models\Product;
@@ -29,6 +30,7 @@ class ProductController extends Controller
 
     public function purchase($id)
     {
+        $users = auth()->user();
         $products = Product::findOrFail($id);
         return view ('purchase', compact('products'));
     }

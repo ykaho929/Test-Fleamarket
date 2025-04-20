@@ -35,25 +35,30 @@
             <div class="shipping-address-items">
                 <div class="address-item">
                     <div class="item--label">配送先</div>
-                    <a href="/purchase/address">変更する</a>
+                    <a href="/purchase/address/{{$products->id}}" class="address-link">変更する</a>
                 </div>
                 <div class="address-item">
-                    <div class="item--postcode">〒XXX-YYYY</div>
-                    <div class="item--address">ここには住所と建物が入ります</div>
+                    <div class="item--postcode">123-3456</div>
+                    <div class="item--address">〇〇××</div>
                 </div>
             </div>
         </div>
         <div class="right-content">
-            <tr class="purchase-form__row">
-                <th class="purchase-form__label">商品代金</th>
-                <td class="purchase-form__data">￥47,000</td>
-            </tr>
-            <tr class="purchase-form__row">
-                <th class="purchase-form__label">支払い方法</th>
-                <td class="purchase-form__data">コンビニ払い</td>
-            </tr>
+            <div class="purchase-item">
+                <table class="purchase-table">
+                    <tr class="purchase-form__row">
+                        <td class="purchase-form__label">商品代金</td>
+                        <td class="purchase-form__data">￥{{$products->price}}</td>
+                    </tr>
+                    <tr class="purchase-form__row">
+                        <td class="purchase-form__label">支払い方法</td>
+                        <td class="purchase-form__data">コンビニ払い</td>
+                    </tr>
+                </table>
+            </div>
             <div class="purchase-item">
                 <button type="submit" class="purchase">購入する</button>
             </div>
+        </div>
     </div>
 @endsection
