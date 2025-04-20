@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\User;
+use App\Models\Product;
 use Illuminate\Http\Request;
 
 class UserController extends Controller
@@ -14,8 +16,13 @@ class UserController extends Controller
         return view('profile');
     }
 
-    public function address(){
-         return view('address');
-    }
+    public function address($product_id)
+    {
+        $users = auth()->user();
+        $products = Product::findOrFail($product_id);
+        $address = $users->address;
+
+        return view('address', compact('products','address'));
+    }    
     
 }
