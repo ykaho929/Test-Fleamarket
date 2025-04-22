@@ -9,12 +9,12 @@
         <div class="profile-form__heading">
             <h2>プロフィール設定</h2>
         </div>
-        <form class="form" action="/" method="get">
+        <form class="form" action="/mypage/profile" method="POST">
             @csrf
             <div class="form__group">
                 <div class="form__group-content">
                     <output id="list" class="image_output"></output>
-                    <input type="file" id="product_image" class="image" name="product_image">
+                    <input type="file" placeholder="{{$user->image}}" name="image" class="image" value="{{ old('image') }}">
                 </div>
             </div>
             <div class="form__group">
@@ -23,7 +23,7 @@
                 </div>
                 <div class="form__group-content">
                     <div class="form__input--text">
-                        <input type="text" name="name" value="{{ old('name') }}" />
+                        <input type="text" placeholder="{{$user->name}}" name="name" class="text" value="{{ old('name') }}" />
                     </div>
                 </div>
             </div>
@@ -33,7 +33,7 @@
                 </div>
                 <div class="form__group-content">
                     <div class="form__input--text">
-                        <input type="text" name="postcode" value="{{ old('postcode') }}" />
+                        <input type="text" placeholder="{{$user->postcode}}" name="postcode" class="text" value="{{ old('postcode') }}"/>
                     </div>
                 </div>
             </div>
@@ -43,7 +43,7 @@
                 </div>
                 <div class="form__group-content">
                     <div class="form__input--text">
-                        <input type="text" name="address" value="{{ old('address') }}" />
+                        <input type="text" placeholder="{{$user->address}}" name="address" class="text" value="{{ old('address') }}" />
                     </div>
                 </div>
             </div>
@@ -53,7 +53,7 @@
                 </div>
                 <div class="form__group-content">
                     <div class="form__input--text">
-                        <input type="text" name="building" value="{{ old('building') }}" />
+                        <input type="text" placeholder="{{$user->building}}" name="building"  class="text" value="{{ old('building') }}" />
                     </div>
                 </div>
             </div>

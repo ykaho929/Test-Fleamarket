@@ -38,8 +38,8 @@
                     <a href="/purchase/address/{{$products->id}}" class="address-link">変更する</a>
                 </div>
                 <div class="address-item">
-                    <div class="item--postcode">123-3456</div>
-                    <div class="item--address">〇〇××</div>
+                    <div class="item--postcode">{{$user->postcode}}</div>
+                    <div class="item--address">{{$user->address}}{{$user->building}}</div>
                 </div>
             </div>
         </div>
