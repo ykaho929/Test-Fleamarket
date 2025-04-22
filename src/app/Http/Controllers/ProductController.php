@@ -30,9 +30,9 @@ class ProductController extends Controller
 
     public function purchase($id)
     {
-        $users = auth()->user();
+        $user = auth()->user();
         $products = Product::findOrFail($id);
-        return view ('purchase', compact('products'));
+        return view ('purchase', compact('user','products'));
     }
     
 }
