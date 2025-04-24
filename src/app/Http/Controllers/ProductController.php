@@ -31,8 +31,17 @@ class ProductController extends Controller
     public function purchase($id)
     {
         $user = auth()->user();
-        $products = Product::findOrFail($id);
-        return view ('purchase', compact('user','products'));
+        $product = Product::findOrFail($id);
+        return view ('purchase', compact('user','product'));
+    }
+
+    public function soldout(Request $request, $product_id)
+    {
+        $user = auth()->user();
+        $product = Product::findOrFail($product_id);
+        $product->is_sold_out = true;
+        $product->save();
+        return redirect()->route('favorite');
     }
     
 }
