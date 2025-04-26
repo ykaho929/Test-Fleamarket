@@ -17,7 +17,6 @@
                 </a>
                 <nav>
                     <ul class="header-nav">
-                        @if (Auth::check())
                         <li class="header-nav__item">
                             <!-- 後で検索ボックス追加 -->
                             <input type="submit" value="なにをお探しですか？">
@@ -27,15 +26,18 @@
                             <a class="header-nav__link" href="/mypage">マイページ</a>
                         </li>
                         <li class="header-nav__item">
+                            @auth
                             <form class="form" action="/logout" method="post">
                                 @csrf
                                 <button class="header-nav__button">ログアウト</button>
                             </form>
+                            @else
+                            <a class="header-nav__link" href="/login">ログイン</a>
+                            @endauth
                         </li>
                         <li class="header-nav__item">
                             <a class="header-nav__link" href="/sell">出品</a>
                         </li>
-                        @endif
                     </ul>
                 </nav>
             </div>

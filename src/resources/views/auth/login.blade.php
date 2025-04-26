@@ -1,10 +1,24 @@
-@extends('layouts.app')
-
-@section('css')
+<!DOCTYPE html>
+<html lang="jp">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fleamarket</title>
+    <link rel="stylesheet" href="{{ asset('css/common.css') }}">
     <link rel="stylesheet" href="{{ asset('css/login.css') }}">
-@endsection
+</head>
 
-@section('content')
+<body>
+    <header class="header">
+        <div class="header__inner">
+            <div class="header-utilities">
+                <a class="header__logo" href="/">
+                    COACHTECH
+                </a>
+            </div>
+        </div>
+    </header>
+
     <div class="login__content">
         <div class="login-form__heading">
             <h2>ログイン</h2>
@@ -50,5 +64,6 @@
             <a class="register__button-submit" href="/register">会員登録の方はこちら</a>
         </div>
     </div>
+</body>
 
-@endsection
+</html>
