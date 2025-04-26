@@ -23,6 +23,7 @@ Route::middleware('auth')->group(function () {
     Route::get('/mypage/profile', [UserController::class, 'register']);
     Route::post('/mypage/profile', [UserController::class, 'update']);
     Route::get('/sell', [ProductController::class, 'sell']);
+    Route::post('/sell', [ProductController::class, 'store']);
     Route::get('/purchase/{id}',[ProductController::class, 'purchase']);
     Route::post('/purchase/{id}',[ProductController::class, 'soldout']);
     Route::get('/purchase/address/{product_id}',[UserController::class,'address']);

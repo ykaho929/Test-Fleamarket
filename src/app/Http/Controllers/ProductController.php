@@ -2,11 +2,13 @@
 
 namespace App\Http\Controllers;
 
+use Illuminate\Http\Request;
 use App\Models\User;
 use App\Models\Category;
 use App\Models\Purchase;
 use App\Models\Product;
-use Illuminate\Http\Request;
+use App\Http\Requests\ExhibitionRequest;
+
 
 class ProductController extends Controller
 {
@@ -20,6 +22,21 @@ class ProductController extends Controller
         $categories = Category::all();
         return view ('sell', compact('categories'));
     }
+
+    public function store(ExhibitionRequest $request)
+    {
+        $product = new Product();
+        $product->name = $request->input('name');
+        $product->explanation = $request->input('explanation');
+        $product->category_id = $request->input('category_id');
+        $product->state = $request->input('state');
+        $product->price = $request->input('price');
+        $product->user_id = auth()->id(); 
+        $product->save();
+        return redirect()->route('index');
+    }
+
+
 
     public function detail($id)
     {
