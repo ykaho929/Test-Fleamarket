@@ -9,7 +9,7 @@
         <div class="product-form__heading">
             <h2>商品の出品</h2>
         </div>
-        <form class="form" action="/sell" method="POST" enctype="multipart/form-data">
+        <form class="form" action="{{ route('sell.store') }}" method="POST" enctype="multipart/form-data">
             @csrf
             <div class="form__group">
                 <div class="form__group-content">
@@ -37,15 +37,16 @@
                 </div>
                 <div class="form__group-content">
                     @foreach($categories as $category)
-                        <button class="form__category-option" name="category_id" type="button" value="{{ $category->id }}">
-                            {{ $category->name }}
-                        </button>                        
+                    <div class="form__checkbox-item">
+                        <input type="checkbox" name="category_id[]" value="{{ $category->id }}" id="category_{{ $category->id }}" {{ in_array($category->id, old('category_id', [])) ? 'checked' : '' }}>
+                        <label for="category_{{ $category->id }}">{{ $category->name }}</label>
+                    </div>
                     @endforeach
-                    @error('category_id')
-                    <span class='input_error'>
-                             <p class="input_error_message">{{$errors->first('category_id')}}</p>
+                    @error('category_id.*')
+                        <span class='input_error'>
+                            <p class="input_error_message">{{ $message }}</p>
                         </span>
-                    @enderror
+                    @enderror                   
                 </div>
             </div>
             <div class="form__group">
