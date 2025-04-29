@@ -25,18 +25,21 @@ class ProductController extends Controller
 
     public function store(ExhibitionRequest $request)
     {
+        dd($request->all());
+        $dir = 'image';
+        $file_name = $request->file('image')->getClientOriginalName();
+        $request->file('image')->storeAs('public/' . $dir, $file_name);
         $product = new Product();
         $product->name = $request->input('name');
+        $product->image = 'storage/' . $dir . '/' . $file_name;
         $product->explanation = $request->input('explanation');
         $product->category_id = $request->input('category_id');
         $product->state = $request->input('state');
         $product->price = $request->input('price');
         $product->user_id = auth()->id(); 
         $product->save();
-        return redirect()->route('index');
+        return redirect('/');
     }
-
-
 
     public function detail($id)
     {
