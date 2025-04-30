@@ -1,0 +1,41 @@
+.header {
+    background: #000;
+}
+
+.header__inner {
+    background: black;
+    width: 1515px;
+    height: 82px;
+    padding: 26px 10px;
+}
+
+.header__logo {
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 24px;
+}
+
+.header__navs{
+    margin: 0px 0px 0px 474px;
+}
+
+.header__nav-serch{
+    width: 563px;
+    height: 80px;
+}
+
+.header__nav-items{
+    width: 463px;
+    height: 80px;
+    margin: 0px 0px 0px 575px;
+    display: flex;
+    list-style: none;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.header__nav-item{
+    width: 135px;
+    height: 47px;
+}
+

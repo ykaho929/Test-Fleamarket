@@ -1,0 +1,50 @@
+.register__content {
+    margin: 200px 0px;
+    width: 1512px;
+    height: 656px;
+    padding: 0px 416px;
+    text-align: center;
+}
+
+.form__group {
+    margin: 10px;
+    text-align: left;
+}
+
+.form__group-content {
+    height: 100%;
+    padding: 10px 0px;
+    font-size: 35px;
+}
+
+.register-form__heading {
+    font-size: 50px;
+}
+
+.form__group-title {
+    font-size: 30px;
+    text-align: left;
+}
+
+.form__button-submit {
+    width: 680px;
+    height: 65.25px;
+    background-color: #FF5555;
+    color: white;
+    font-size: 40px;
+    border: none;
+    border-radius: 5px;
+}
+
+.login__link {
+    width: 680px;
+    padding: 20px;
+}
+
+.login__button-submit {
+    width: 257px;
+    height: 53.29px;
+    font-size: 20px;
+    color: #0073CC;
+    text-decoration: none;
+}

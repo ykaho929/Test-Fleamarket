@@ -4,23 +4,22 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Fleamarket</title>
+    <link rel="stylesheet" href="{{ asset('css/reset.css') }}">
     <link rel="stylesheet" href="{{ asset('css/common.css') }}">
-    <link rel="stylesheet" href="{{ asset('css/register.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/auth/register.css') }}">
 </head>
 
 <body>
     <header class="header">
         <div class="header__inner">
             <div class="header-utilities">
-                <a class="header__logo" href="/">
-                    COACHTECH
-                </a>
+                <a href="/"><img src="{{ asset('img/logo.svg') }}" alt="ロゴ" ></a>
             </div>
         </div>
     </header>
     <div class="register__content">
         <div class="register-form__heading">
-            <h2>会員登録</h2>
+            会員登録
         </div>
         <form class="form" action="/register" method="post">
             @csrf
@@ -29,7 +28,7 @@
                     <span class="form__label--item">お名前</span>
                 </div>
                 <div class="form__group-content">
-                    <div class="form__input--text">
+                    <div class="form__group-input">
                         <input type="text" name="name" value="{{ old('name') }}" />
                     </div>
                     <div class="form__error">
@@ -44,7 +43,7 @@
                     <span class="form__label--item">メールアドレス</span>
                 </div>
                 <div class="form__group-content">
-                    <div class="form__input--text">
+                    <div class="form__group-input">
                         <input type="email" name="email" value="{{ old('email') }}" />
                     </div>
                     <div class="form__error">
@@ -59,7 +58,7 @@
                     <span class="form__label--item">パスワード</span>
                 </div>
                 <div class="form__group-content">
-                    <div class="form__input--text">
+                    <div class="form__group-input">
                         <input type="password" name="password" />
                     </div>
                     <div class="form__error">
@@ -74,14 +73,14 @@
                     <span class="form__label--item">確認用パスワード</span>
                 </div>
                 <div class="form__group-content">
-                    <div class="form__input--text">
+                    <div class="form__group-input">
                         <input type="password" name="password_confirmation" />
                     </div>
                 </div>
             </div>
 
             <div class="form__button">
-                <button class="form__button-submit" type="submit">登録</button>
+                <button class="form__button-submit" type="submit">登録する</button>
             </div>
         </form>
         <div class="login__link">
