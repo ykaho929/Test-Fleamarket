@@ -34,9 +34,6 @@ php artisan db:seed
 * PHP8.3.8  
 * Laravel8.83.8
 
-## ER図  
-
-
 ## URL  
 * 開発環境：http://localhost/login  
 * phpMyAdmin：http://localhost:8080/
