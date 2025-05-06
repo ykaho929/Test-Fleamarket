@@ -15,31 +15,32 @@
             <div class="header-utilities">
                 <a href="/"><img src="{{ asset('img/logo.svg') }}" alt="ロゴ" ></a>
             </div>
-            <ul class="header__navs">
-                <div class="header__nav-serch">                      
+            <div class="header__nav-serch">
+                <div class="nav-serch-input">               
                     <input type="submit" value="なにをお探しですか？">
+                </div>
+            </div>
+            <div class="header__nav-menu">
+                <ul class="header__nav-items">
+                        <li class="header__nav-item">
+                            <a class="header__nav-link" href="/mypage">マイページ</a>
+                        </li>
+                        <li class="header__nav-item">
+                            @auth
+                            <form class="form" action="/logout" method="post">
+                                @csrf
+                                <button class="header__nav-link">ログアウト</button>
                             </form>
-                    </li>
-                </div>
-                <div class="header__nav-items">
-                    <li clss="header__nav-item">                        
-                        <a class="header-nav__link" href="/mypage">マイページ</a>
-                    </li>
-                    <li class="header__nav-item">
-                        @auth
-                        <form class="form" action="/logout" method="post">
-                            @csrf
-                            <button class="header-nav__button">ログアウト</button>
-                        </form>
-                        @else
-                        <a class="header-nav__link" href="/login">ログイン</a>
-                        @endauth
-                    </li>
-                    <li class="header__nav-item">
-                        <a class="header-nav__link" href="/sell">出品</a>
-                    </li>
-                </div>
-            </ul>
+                            @else
+                            <a class="header__nav-link" href="/login">ログイン</a>
+                            @endauth
+                        </li>
+                        <li class="header__nav-item">
+                            <a class="header__nav-btn" href="/sell">出品</a>
+                        </li>
+                    </div>
+                </ul>
+            </div>
         </div>
     </header>
 
